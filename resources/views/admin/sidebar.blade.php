@@ -12,25 +12,17 @@
 <div class="sidebar-menu">
     <ul class="menu">
         <li class="sidebar-item active ">
-            <a href="" class='sidebar-link'>
+            <a href="{{route('admin.dashboard')}}" class='sidebar-link'>
                 <i class="bi bi-grid-fill"></i>
                 <span>Dashboard</span>
             </a>
         </li>
-        <li class="sidebar-item  has-sub">
-            <a href="#" class='sidebar-link'>
+        <li class="sidebar-item ">
+            <a href="{{route('admin.clientes')}}" class='sidebar-link'>
                 <i class="bi bi-people"></i>
                 <span>Clientes</span>
             </a>
-            <ul class="submenu ">
-                <li class="submenu-item ">
-                    <a href="">Listar Todos</a>
-                </li> 
-                <li class="submenu-item ">
-                    <a href="">Cadastrar Novo</a>
-                </li>
-            </ul>
-        </li> 
+        </li>
         <li class="sidebar-item  has-sub">
             <a href="#" class='sidebar-link'>
                 <i class="bi bi-card-checklist"></i>
@@ -39,12 +31,12 @@
             <ul class="submenu ">
                 <li class="submenu-item ">
                     <a href="">Listar Todas</a>
-                </li> 
+                </li>
                 <li class="submenu-item ">
                     <a href="">Relatórios</a>
                 </li>
             </ul>
-        </li>    
+        </li>
         <li class="sidebar-item  has-sub">
             <a href="#" class='sidebar-link'>
                 <i class="bi bi-dash-square"></i>
@@ -53,12 +45,12 @@
             <ul class="submenu ">
                 <li class="submenu-item ">
                     <a href="">Listar Todos</a>
-                </li> 
+                </li>
                 <li class="submenu-item ">
                     <a href="">Cadastrar Novo</a>
                 </li>
             </ul>
-        </li>    
+        </li>
         <li class="sidebar-item  has-sub">
             <a href="#" class='sidebar-link'>
                 <i class="bi bi-cup"></i>
@@ -67,7 +59,7 @@
             <ul class="submenu ">
                 <li class="submenu-item ">
                     <a href="">Listar Todos</a>
-                </li> 
+                </li>
                 <li class="submenu-item ">
                     <a href="">Cadastrar Novo</a>
                 </li>
@@ -75,12 +67,12 @@
                     <a href="">Características</a>
                 </li>
             </ul>
-        </li>    
-        
-   
-        
+        </li>
 
-        
+
+
+
+
         <!--
         <li class="sidebar-item  has-sub">
             <a href="#" class='sidebar-link'>
@@ -100,7 +92,7 @@
             </a>
         </li>
     -->
-   
+
     </ul>
 </div>
 
