@@ -22,3 +22,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/', [\App\Http\Controllers\Admin\dashboardController::class,'index'])->name('admin.dashboard');
+});
