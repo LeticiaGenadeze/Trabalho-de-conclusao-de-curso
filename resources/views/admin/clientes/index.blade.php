@@ -33,14 +33,25 @@
                                     <td class="text-bold-500"></td>
                                     <td>{{$cliente->created_at}}</td>
                                     <td>
-                                        <a href="{{route('admin.clientes.show', $cliente->id)}}">Ver</a>
-                                        <a href="{{route('admin.clientes.edit', $cliente->id)}}">Editar</a>             
-                                        @if($cliente->id != 1)                         
-                                        <form class="form form-horizontal" action="{{route('admin.clientes.destroy', $cliente->id)}}" method="POST">
-                                            @csrf
-                                            <button type="submit" class="btn btn-primary me-1 mb-1">Deletar</button>
-                                        </form>
-                                        @endif
+                                        <div class="d-flex">
+                                            <a class="btn btn-sm btn-success me-1" href="{{route('admin.clientes.show', $cliente->id)}}"
+                                                ><i class="bi bi-eye"></i>
+                                            </a>
+                                            <a class="btn btn-sm btn-info me-1" href="{{route('admin.clientes.edit', $cliente->id)}}">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+                                            @if($cliente->id != 1)
+                                            <form class="form form-horizontal" action="{{route('admin.clientes.destroy', $cliente->id)}}" method="POST">
+                                                @csrf
+                                                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir?')" class="btn btn-sm btn-danger">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                            @endif
+                                        </div>
+
+
+
                                     </td>
                                 </tr>
                                 @empty

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 use function GuzzleHttp\Promise\all;
 
@@ -18,8 +20,8 @@ class ClientesController extends Controller
     public function index()
     {
         $clientes = User::all();
-        return view('admin.clientes.index', compact('clientes'));  
-        }
+        return view('admin.clientes.index', compact('clientes'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -50,8 +52,12 @@ class ClientesController extends Controller
      */
     public function show($id)
     {
-        $cliente=User::find($id);
-        return view('admin.clientes.show', compact('cliente'));  
+
+        if (!$cliente = User::find($id)) {
+            return redirect()->back();
+        }
+
+        return view('admin.clientes.show', compact('cliente'));
     }
 
     /**
@@ -62,8 +68,11 @@ class ClientesController extends Controller
      */
     public function edit($id)
     {
-        $cliente=User::find($id);
-        return view('admin.clientes.edit', compact('cliente'));  
+
+        if (!$cliente = User::find($id)) {
+            return redirect()->back();
+        }
+        return view('admin.clientes.edit', compact('cliente'));
     }
 
     /**
@@ -75,13 +84,22 @@ class ClientesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cliente=User::find($id);     
-              
+
+        if (!$cliente = User::find($id)) {
+            return redirect()->back();
+        }
         $data = $request->all();
+        $validator = Validator::make($data, [
+            'name' =>  'required',
+            'email' =>  ['required', Rule::unique('users')->ignore($cliente->id)]
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
         $cliente->update($data);
 
-        return redirect()->route('admin.clientes.show', $id);
+        return redirect()->back()->withSuccess('Usuário atualizado com Sucesso!');
     }
 
 
@@ -93,7 +111,9 @@ class ClientesController extends Controller
      */
     public function destroy($id)
     {
-        $cliente=User::find($id); 
+        if (!$cliente=User::find($id)){
+            return redirect()->back();
+        }
         $cliente->delete();
         return redirect()->back();
     }
