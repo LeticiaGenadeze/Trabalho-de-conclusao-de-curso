@@ -58,10 +58,10 @@
             </a>
             <ul class="submenu ">
                 <li class="submenu-item ">
-                    <a href="">Listar Todos</a>
+                    <a href="{{route('admin.chas')}}">Listar Todos</a>
                 </li>
                 <li class="submenu-item ">
-                    <a href="">Cadastrar Novo</a>
+                    <a href="{{route('admin.chas.create')}}">Cadastrar Novo</a>
                 </li>
                 <li class="submenu-item ">
                     <a href="">Características</a>

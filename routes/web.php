@@ -39,6 +39,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/sintomas/{id}/excluir', [\App\Http\Controllers\Admin\SintomasController::class, 'destroy'])->name('admin.sintomas.destroy');
     Route::post('/sintomas/salvar', [\App\Http\Controllers\Admin\SintomasController::class, 'store'])->name('admin.sintomas.store');
 
+    Route::get('/chas', [\App\Http\Controllers\Admin\ChasController::class, 'index'])->name('admin.chas');
+    Route::get('/chas/cadastrar', [\App\Http\Controllers\Admin\ChasController::class, 'create'])->name('admin.chas.create');
+    Route::get('/chas/{id}/editar', [\App\Http\Controllers\Admin\ChasController::class, 'edit'])->name('admin.chas.edit');
+    Route::get('/chas/{id}', [\App\Http\Controllers\Admin\ChasController::class, 'show'])->name('admin.chas.show');
+    Route::post('/chas/{id}/salvar', [\App\Http\Controllers\Admin\ChasController::class, 'update'])->name('admin.chas.update');
+    Route::post('/chas/{id}/excluir', [\App\Http\Controllers\Admin\ChasController::class, 'destroy'])->name('admin.chas.destroy');
+    Route::post('/chas/salvar', [\App\Http\Controllers\Admin\ChasController::class, 'store'])->name('admin.chas.store');
 });
 
 
