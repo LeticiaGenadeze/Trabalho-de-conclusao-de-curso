@@ -31,4 +31,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/clientes/{id}/editar', [\App\Http\Controllers\Admin\ClientesController::class, 'edit'])->name('admin.clientes.edit');
     Route::post('/clientes/{id}/salvar', [\App\Http\Controllers\Admin\ClientesController::class, 'update'])->name('admin.clientes.update');
     Route::post('/clientes/{id}/excluir', [\App\Http\Controllers\Admin\ClientesController::class, 'destroy'])->name('admin.clientes.destroy');
+
+    Route::get('/sintomas', [\App\Http\Controllers\Admin\SintomasController::class, 'index'])->name('admin.sintomas');
+    Route::get('/sintomas/cadastrar', [\App\Http\Controllers\Admin\SintomasController::class, 'create'])->name('admin.sintomas.create');
+    Route::get('/sintomas/{id}/editar', [\App\Http\Controllers\Admin\SintomasController::class, 'edit'])->name('admin.sintomas.edit');
+    Route::post('/sintomas/{id}/salvar', [\App\Http\Controllers\Admin\SintomasController::class, 'update'])->name('admin.sintomas.update');
+    Route::post('/sintomas/{id}/excluir', [\App\Http\Controllers\Admin\SintomasController::class, 'destroy'])->name('admin.sintomas.destroy');
+    Route::post('/sintomas/salvar', [\App\Http\Controllers\Admin\SintomasController::class, 'store'])->name('admin.sintomas.store');
+
 });
+
+

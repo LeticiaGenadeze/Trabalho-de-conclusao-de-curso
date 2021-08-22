@@ -44,10 +44,10 @@
             </a>
             <ul class="submenu ">
                 <li class="submenu-item ">
-                    <a href="">Listar Todos</a>
+                    <a href="{{route('admin.sintomas')}}">Listar Todos</a>
                 </li>
                 <li class="submenu-item ">
-                    <a href="">Cadastrar Novo</a>
+                    <a href="{{route('admin.sintomas.create')}}">Cadastrar Novo</a>
                 </li>
             </ul>
         </li>
