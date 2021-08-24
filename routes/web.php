@@ -46,6 +46,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/chas/{id}/salvar', [\App\Http\Controllers\Admin\ChasController::class, 'update'])->name('admin.chas.update');
     Route::post('/chas/{id}/excluir', [\App\Http\Controllers\Admin\ChasController::class, 'destroy'])->name('admin.chas.destroy');
     Route::post('/chas/salvar', [\App\Http\Controllers\Admin\ChasController::class, 'store'])->name('admin.chas.store');
+
+    Route::get('/caracteristicas', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'index'])->name('admin.caracteristicas');
+    Route::get('/caracteristicas/cadastrar', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'create'])->name('admin.caracteristicas.create');
+    Route::get('/caracteristicas/{id}/editar', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'edit'])->name('admin.caracteristicas.edit');
+    Route::get('/caracteristicas/{id}', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'show'])->name('admin.caracteristicas.show');
+    Route::post('/caracteristicas/{id}/salvar', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'update'])->name('admin.caracteristicas.update');
+    Route::post('/caracteristicas/{id}/excluir', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'destroy'])->name('admin.caracteristicas.destroy');
+    Route::post('/caracteristicas/salvar', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'store'])->name('admin.caracteristicas.store');
 });
 
 

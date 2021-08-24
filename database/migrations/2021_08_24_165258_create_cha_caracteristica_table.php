@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCaracteristicasTable extends Migration
+class CreateChaCaracteristicaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateCaracteristicasTable extends Migration
      */
     public function up()
     {
-        Schema::create('caracteristicas', function (Blueprint $table) {
-            $table->id();         
-            $table->string('name');
-            $table->string('description');
-            $table->integer('note');
-            $table->string('type');            
+        Schema::create('cha_caracteristica', function (Blueprint $table) {
+            $table->id();             
+            $table->foreignId('cha_id')->constrained('chas');               
+            $table->foreignId('caracteristica_id')->constrained('caracteristicas');                       
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateCaracteristicasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('caracteristicas');
+        Schema::dropIfExists('cha_caracteristica');
     }
 }

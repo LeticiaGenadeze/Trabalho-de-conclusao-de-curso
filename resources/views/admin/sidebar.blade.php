@@ -64,7 +64,7 @@
                     <a href="{{route('admin.chas.create')}}">Cadastrar Novo</a>
                 </li>
                 <li class="submenu-item ">
-                    <a href="">Características</a>
+                    <a href="{{route('admin.caracteristicas')}}">Características</a>
                 </li>
             </ul>
         </li>
