@@ -21,7 +21,7 @@
                         <table class="table table-hover mb-0">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th>Imagem</th>
                                     <th>Nome</th>
                                     <th>Descrição</th>
                                     <th></th>
@@ -30,24 +30,27 @@
                             <tbody>
                                 @forelse($chas as $cha)
                                 <tr>
-                                    <td>{{$cha->id}}</td>
+                                    <td> <img src="{{asset('storage')}}/chas/{{$cha->cover}}" width="80"></td>
                                     <td class="text-bold-500">{{$cha->name}}</td>
                                     <td>{{$cha->description}}</td>
                                     <td>
                                         <div class="d-flex">
+                                            <a class="btn btn-sm btn-primary me-1" href="{{route('admin.chas.caracteristica', $cha->id)}}">
+                                                <i class="bi bi-list-check"></i>
+                                            </a>
                                             <a class="btn btn-sm btn-success me-1" href="{{route('admin.chas.show', $cha->id)}}">
                                                 <i class="bi bi-eye"></i>
                                             </a>
-
                                             <a class="btn btn-sm btn-info me-1" href="{{route('admin.chas.edit', $cha->id)}}">
                                                 <i class="bi bi-pencil"></i>
                                             </a>
-                                            <form class="form form-horizontal" action="{{route('admin.chas.destroy', $cha->id)}}" method="POST">
+                                            <form class="form form-horizontal me-1" action="{{route('admin.chas.destroy', $cha->id)}}" method="POST">
                                                 @csrf
                                                 <button type="submit" onclick="return confirm('Tem certeza que deseja excluir?')" class="btn btn-sm btn-danger">
                                                     <i class="bi bi-trash"></i>
                                                 </button>
                                             </form>
+
                                         </div>
                                     </td>
                                 </tr>

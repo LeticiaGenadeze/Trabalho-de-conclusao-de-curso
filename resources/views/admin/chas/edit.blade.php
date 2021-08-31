@@ -26,7 +26,7 @@
                             {{ session('success') }}
                         </div>
                         @endif
-                        <form class="form form-horizontal" action="{{route('admin.chas.update', $cha->id)}}" method="POST">
+                        <form class="form form-horizontal" action="{{route('admin.chas.update', $cha->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-body">
                                 <div class="row">
@@ -41,6 +41,12 @@
                                     </div>
                                     <div class="col-md-8 form-group">
                                         <input type="text" id="first-name" class="form-control" name="description" placeholder="Descrição" value="{{old('description',  $cha->description)}}">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Imagem do Chá</label>
+                                    </div>
+                                    <div class="col-md-8 form-group">
+                                        <input class="form-control" name="cover" type="file" id="formFile">
                                     </div>
                                     <div class="col-sm-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary me-1 mb-1">Salvar</button>

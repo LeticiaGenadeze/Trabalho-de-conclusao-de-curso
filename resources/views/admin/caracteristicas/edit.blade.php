@@ -52,7 +52,12 @@
                                         <label>Tipo</label>
                                     </div>
                                     <div class="col-md-8 form-group">
-                                        <input type="text" id="first-name" class="form-control" name="type" placeholder="Tipo" value="{{old('type',  $caracteristica->type)}}">
+                                        <fieldset class="form-group">
+                                            <select class="form-select" id="basicSelect" name="type">                                                
+                                                <option @if($caracteristica->type == 'beneficio') selected @endif value="beneficio">Benefício</option>
+                                                <option @if($caracteristica->type == 'maleficio') selected @endif value="maleficio">Malefício</option>                                                
+                                            </select>
+                                        </fieldset>
                                     </div>
                                     <div class="col-sm-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary me-1 mb-1">Salvar</button>

@@ -25,6 +25,12 @@ require __DIR__ . '/auth.php';
 
 Route::group(['prefix' => 'admin'], function () {
 
+
+    Route::get('/perguntas', function() {
+        return view('admin.perguntas');
+    });
+
+    
     Route::get('/', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/clientes', [\App\Http\Controllers\Admin\ClientesController::class, 'index'])->name('admin.clientes');
     Route::get('/clientes/{id}', [\App\Http\Controllers\Admin\ClientesController::class, 'show'])->name('admin.clientes.show');
@@ -46,6 +52,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/chas/{id}/salvar', [\App\Http\Controllers\Admin\ChasController::class, 'update'])->name('admin.chas.update');
     Route::post('/chas/{id}/excluir', [\App\Http\Controllers\Admin\ChasController::class, 'destroy'])->name('admin.chas.destroy');
     Route::post('/chas/salvar', [\App\Http\Controllers\Admin\ChasController::class, 'store'])->name('admin.chas.store');
+    Route::get('/chas/{id}/caracteristicas', [\App\Http\Controllers\Admin\ChasController::class, 'caracteristica'])->name('admin.chas.caracteristica');    
+    Route::post('/chas/{id}/addcaracteristica/', [\App\Http\Controllers\Admin\ChasController::class, 'addCaracteristica'])->name('admin.chas.addCaracteristica');
+    Route::post('/caracteristica/{id}/excluir', [\App\Http\Controllers\Admin\ChasController::class, 'deletarCaracteristica'])->name('admin.chas.deletarCaracteristica');
+      
 
     Route::get('/caracteristicas', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'index'])->name('admin.caracteristicas');
     Route::get('/caracteristicas/cadastrar', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'create'])->name('admin.caracteristicas.create');
@@ -54,6 +64,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/caracteristicas/{id}/salvar', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'update'])->name('admin.caracteristicas.update');
     Route::post('/caracteristicas/{id}/excluir', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'destroy'])->name('admin.caracteristicas.destroy');
     Route::post('/caracteristicas/salvar', [\App\Http\Controllers\Admin\CaracteristicasController::class, 'store'])->name('admin.caracteristicas.store');
+   
 });
 
 
