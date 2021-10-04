@@ -50,6 +50,9 @@
     <script src="{{ asset('themes/admin/js/bootstrap.bundle.min.js') }}"></script>      
 
     <script src="{{ asset('themes/admin/js/main.js') }}"></script>
+    <script src="{{ asset('themes/admin/vendors/apexcharts/apexcharts.js') }}"></script>
+    <script src="{{ asset('themes/admin/js/pages/dashboard.js') }}"></script>
+
 </body>
 
 </html>

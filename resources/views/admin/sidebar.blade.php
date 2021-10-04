@@ -30,10 +30,10 @@
             </a>
             <ul class="submenu ">
                 <li class="submenu-item ">
-                    <a href="">Listar Todas</a>
+                    <a href="{{route('admin.consultas')}}">Efetivadas</a>
                 </li>
                 <li class="submenu-item ">
-                    <a href="">Relatórios</a>
+                    <a href="{{route('admin.consultas.pendentes')}}">Pendentes</a>
                 </li>
             </ul>
         </li>

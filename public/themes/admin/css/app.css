@@ -1378,10 +1378,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 10px;
+  padding-right: 10px;
 }
 .stats-icon i {
   color: #fff;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 .stats-icon.purple {
   background-color: #9694ff;

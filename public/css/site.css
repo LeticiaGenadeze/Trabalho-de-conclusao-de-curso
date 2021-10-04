@@ -1,0 +1,109 @@
+.logo-site {
+    max-width: 200px;
+}
+
+.nav-link-login {
+    color: #fff;
+    background-color: #da5c5c;
+    border-radius: 20px;
+}
+
+.nav-link-login:hover {
+    color: #fff;
+    background-color: #b05959;
+}
+
+.bg-footer {
+    background-color: #f9f8f9;
+}
+
+.site-topo {
+    border-bottom: 1px solid #ccc;
+}
+
+.btn-continuar {
+    background-color: #37b649;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+
+.btn-continuar:hover {
+    color: #fff;
+    font-weight: bold;
+}
+
+.text-grey {
+    color: #bbc0bb;
+}
+
+.card-perguntas {
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.progress, .progress-bar{
+    height: 5px;
+}
+
+.card-perguntas p{
+    font-weight: bold;
+    color: #666;
+}
+
+.card-perguntas input{
+    border-radius: 20px;
+}
+
+.input-largura-menor{
+    width: 300px;
+    margin: 0 auto;
+}
+
+.radius20{
+    border-radius: 20px;
+}
+
+.card-alimentacao{
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mt-6{
+    margin-top: 60px;
+}
+
+.mt-8{
+    margin-top: 80px;
+}
+
+.mt-10{
+    margin-top: 100px;
+}
+
+.js-cookie-consent{
+    background-color: #f0ee7c;
+}
+
+.js-cookie-consent p{
+   margin: 0;
+   padding: 0;
+   font-size: 14px;
+}
+
+.js-cookie-consent a{
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+ }
+
+ .js-cookie-consent a:hover{
+    cursor: pointer;
+    font-weight: bold;
+ }

@@ -15,21 +15,24 @@ class CreateConsultasTable extends Migration
     {
         Schema::create('consultas', function (Blueprint $table) {
             $table->id();
-            $table->date('dataConsulta');
-            $table->float('peso');
-            $table->float('altura');
-            $table->string('gravidez');
-            $table->string('amamentacao');
-            $table->string('traumaEmocional');
-            $table->string('intoleranciaAlimentar');
-            $table->string('dorInflamatoria');
-            $table->string('tempoDorCronica');
-            $table->string('usoDeCha');
-            $table->string('habitosAlimentares');
-            $table->string('consumoDeAgua');
-            $table->string('praticaExercicioFisico');
-            $table->string('usoDeMedicamento');
-            $table->string('consumoDeCha');
+            $table->string('nome');
+            $table->float('peso')->nullable();
+            $table->float('altura')->nullable();
+            $table->string('sexo')->nullable();
+            $table->dateTime('dataDeNascimento')->nullable();
+            $table->string('gravidezAmamentacao')->nullable();
+            $table->string('intoleranciaAlimentar')->nullable();
+            $table->string('dorInflamatoria')->nullable();
+            $table->string('tempoDorCronica')->nullable();
+            $table->string('usoDeCha')->nullable();
+            $table->string('habitosAlimentares')->nullable();
+            $table->string('consumoDeAgua')->nullable();
+            $table->string('praticaExercicioFisico')->nullable();
+            $table->string('usoDeMedicamento')->nullable();
+            $table->string('consumoDeCha')->nullable();
+            $table->string('fatoresDoCha')->nullable();          
+            $table->string('status')->nullable();          
+            $table->integer('user_id')->nullable();
             $table->timestamps();
         });
 

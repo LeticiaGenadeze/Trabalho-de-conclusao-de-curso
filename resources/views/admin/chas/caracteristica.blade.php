@@ -26,7 +26,11 @@
         <h3>Todas as Características</h3>
         <ul class="list-group">
             @forelse($caracteristicas as $caracteristica)
-            <li class="list-group-item">
+            <li class="list-group-item d-flex justify-content-between">
+                <button class="text-white px-2 mb-1 btn btn-sm
+                @if($caracteristica->type == 'beneficio') btn-success @endif
+                @if($caracteristica->type == 'maleficio') btn-danger @endif
+                ">{{$caracteristica->type}}</button>
                 Nome: {{$caracteristica->name}}
                 <form class="form form-horizontal me-1" action="{{route('admin.chas.addCaracteristica', $cha->id)}}" method="POST">
                     @csrf
@@ -45,12 +49,16 @@
         <h3>Características deste Chá</h3>
         <ul class="list-group">
             @forelse($chaCaracteristicas as $chaCaracteristica)
-            <li class="list-group-item">
+            <li class="list-group-item d-flex justify-content-between">
+                <button class="text-white px-2 mb-1 btn btn-sm
+                @if($chaCaracteristica->caracteristica->type == 'beneficio') btn-success @endif
+                @if($chaCaracteristica->caracteristica->type == 'maleficio') btn-danger @endif
+                ">{{$chaCaracteristica->caracteristica->type}}</button>
                 Nome: {{$chaCaracteristica->caracteristica->name}}
                 <form class="form form-horizontal me-1" action="{{route('admin.chas.deletarCaracteristica', $chaCaracteristica->id)}}" method="POST">
                     @csrf
                     <button type="submit" class="btn btn-danger btn-sm">
-                    <i class="bi bi-dash"></i>
+                        <i class="bi bi-dash"></i>
                     </button>
                 </form>
             </li>
@@ -62,8 +70,5 @@
         </ul>
     </div>
 </div>
-
-
-
 
 @endsection

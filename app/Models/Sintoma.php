@@ -13,4 +13,5 @@ class Sintoma extends Model
         'name',
         'description',
     ];
+
 }

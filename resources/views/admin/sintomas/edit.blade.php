@@ -37,10 +37,10 @@
                                         <input type="text" id="first-name" class="form-control" name="name" placeholder="Nome" value="{{old('name',  $sintoma->name)}}">
                                     </div>
                                     <div class="col-md-4">
-                                        <label>Descrição</label>
+                                        <label>Slug</label>
                                     </div>
                                     <div class="col-md-8 form-group">
-                                        <input type="text" id="first-name" class="form-control" name="description" placeholder="Descrição" value="{{old('description',  $sintoma->description)}}">
+                                        <input type="text" id="first-name" class="form-control" name="description" placeholder="Slug" value="{{old('description',  $sintoma->description)}}">
                                     </div>
                                     <div class="col-sm-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary me-1 mb-1">Salvar</button>

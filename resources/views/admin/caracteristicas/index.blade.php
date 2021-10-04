@@ -24,7 +24,9 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Nome</th>                               
+                                    <th>Nome</th> 
+                                    <th>Slug</th>
+                                    <th>Tipo</th>                              
                                     <th></th>
                                 </tr>
                             </thead>
@@ -33,6 +35,8 @@
                                 <tr>
                                     <td>{{$caracteristica->id}}</td>
                                     <td class="text-bold-500">{{$caracteristica->name}}</td>
+                                    <td class="text-bold-500">{{$caracteristica->description}}</td>
+                                    <td class="text-bold-500">{{$caracteristica->type}}</td>
                                     <td>
                                         <div class="d-flex">
                                             <a class="btn btn-sm btn-success me-1" href="{{route('admin.caracteristicas.show', $caracteristica->id)}}">

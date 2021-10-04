@@ -23,7 +23,7 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Nome</th>
-                                    <th>Descrição</th>
+                                    <th>Slug</th>
                                     <th></th>
                                 </tr>
                             </thead>
