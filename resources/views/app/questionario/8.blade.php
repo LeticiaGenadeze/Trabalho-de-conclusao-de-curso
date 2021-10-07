@@ -10,7 +10,7 @@
                     @csrf
                     <input type="hidden" value="step9" name="nextStep">
                     <div class="form-group">
-                        <p class="py-4">Você está grávida e amamentando?</p>
+                        <p class="px-4 pb-4">Você está grávida e amamentando?</p>
                         <div class="border px-3 radius20 mb-2">
                             <div class="form-check">
                                 <input @if ($consulta->gravidezAmamentacao == 'gravida') checked @endif

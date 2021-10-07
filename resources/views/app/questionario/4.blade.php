@@ -10,8 +10,12 @@
                     @csrf
                     <input type="hidden" value="step5" name="nextStep">
                     <div class="form-group">
-                        <p class="py-4">Qual sua data de nascimento??</p>
-                        <input type="date" class="form-control input-largura-menor" name="dataDeNascimento" value="{{date('Y-m-d', strtotime($consulta->dataDeNascimento))}}">
+                        <p class="px-4 pb-4">Qual sua data de nascimento??</p>
+                        <input type="date" class="form-control input-largura-menor" name="dataDeNascimento" 
+                        @if($consulta->dataDeNascimento)
+                        value="{{date('Y-m-d', strtotime($consulta->dataDeNascimento))}}"
+                        @endif
+                        >
                     </div>
                     <input type="submit" class="btn btn-sm btn-continuar m-4" value="Continuar" required>
                 </form>

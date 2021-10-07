@@ -10,7 +10,7 @@
                     @csrf
                     <input type="hidden" value="step15" name="nextStep">
                     <div class="form-group">
-                        <p class="py-4">Você pratica exercícios físicos?</p>
+                        <p class="px-4 pb-4">Você pratica exercícios físicos?</p>
                         <div class="border px-3 radius20 mb-2">
                             <div class="form-check">
                                 <input @if ($consulta->praticaExercicioFisico == 'nao') checked @endif  

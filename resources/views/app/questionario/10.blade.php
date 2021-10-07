@@ -10,7 +10,7 @@
                     @csrf
                     <input type="hidden" value="step11" name="nextStep">
                     <div class="form-group">
-                        <p class="py-4">Em caso de dor inflamatória (ocasionada por algum trauma ou impacto recente), você sabe o que ocasionou?</p>
+                        <p class="px-4 pb-4">Em caso de dor inflamatória (ocasionada por algum trauma ou impacto recente), você sabe o que ocasionou?</p>
                         <input type="text" class="form-control" id="basicInput" placeholder="Digite sua resposta" name="dorInflamatoria"  value="{{$consulta->dorInflamatoria}}" required>
                     </div>
                     <input type="submit" class="btn btn-sm btn-continuar m-4" value="Continuar">

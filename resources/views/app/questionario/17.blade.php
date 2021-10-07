@@ -10,7 +10,7 @@
                     @csrf
                     <input type="hidden" value="step18" name="nextStep">
                     <div class="form-group">
-                        <p class="py-4">Você já faz o uso de algum tipo de chá?</p>
+                        <p class="px-4 pb-4">Você já faz o uso de algum tipo de chá?</p>
                         <div class="border px-3 radius20 mb-2">
                             <div class="form-check">
                                 <input @if ($consulta->consumoDeCha == 'sim') checked @endif 

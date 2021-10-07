@@ -10,13 +10,13 @@
                     @csrf
                     <input type="hidden" value="step13" name="nextStep">
                     <div class="form-group">
-                        <p class="py-4">Você possui algum tipo de intolerância alimentar?</p>
+                        <p class="px-4 pb-4">Você possui algum tipo de intolerância alimentar?</p>
                         <div class="border px-3 radius20 mb-2">
                             <div class="form-check">
                                 <input @if ($consulta->intoleranciaAlimentar == 'nao') checked @endif 
                                 class="form-check-input" type="radio" name="intoleranciaAlimentar" id="flexRadioDefault1" value="nao" required>
                                 <label class="form-check-label" for="flexRadioDefault1">
-                                    Não
+                                    Não tenho intolerância alimentar
                                 </label>
                             </div>
                         </div>

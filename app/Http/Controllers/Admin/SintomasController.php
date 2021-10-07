@@ -50,12 +50,8 @@ class SintomasController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-
         $sintoma = new Sintoma;
         $sintoma->fill($data);
-
-
-
 
         if ($sintoma->save()) {
             return redirect()->route('admin.sintomas')->withSuccess('Sintoma cadastrado com Sucesso!');

@@ -10,7 +10,7 @@
                     @csrf
                     <!--<input type="hidden" value="step8" name="nextStep">-->
                     <div class="form-group">
-                        <p class="py-4">Com qual sexo você nasceu?</p>
+                        <p class="px-4 pb-4">Com qual sexo você nasceu?</p>
                         <div class="d-flex align-itens-center justify-content-center">
                             <div class="form-check">
                                 <input 

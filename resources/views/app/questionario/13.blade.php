@@ -5,12 +5,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <div class="card-perguntas card-alimentacao py-3 px-5 shadow-lg text-center">
+            <div class="card-perguntas card-alimentacao p-5 shadow-lg text-center">
                 <form method="POST" action="{{route('site.consulta.update', $consulta->id)}}">
                     @csrf
                     <input type="hidden" value="step14" name="nextStep">
                     <div class="form-group">
-                        <p class="py-4">Como são seus hábitos alimentares?</p>
+                        <p class="px-4 pb-4">Como são seus hábitos alimentares?</p>
                         <div class="border px-3 radius20 mb-2">
                             <div class="form-check">
                                 <input @if ($consulta->habitosAlimentares == 'bom') checked @endif  

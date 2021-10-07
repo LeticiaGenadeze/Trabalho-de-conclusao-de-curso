@@ -10,7 +10,7 @@
                     @csrf
                     <input type="hidden" value="step6" name="nextStep">
                     <div class="form-group">
-                        <p class="py-4">Qual é seu peso em Kilogramas?</p>
+                        <p class="px-4 pb-4">Qual é seu peso (em quilogramas)?</p>
                         <input type="number" class="form-control input-largura-menor" id="basicInput" placeholder="Digite seu peso" name="peso" value="{{$consulta->peso}}">
                     </div>
                     <input type="submit" class="btn btn-sm btn-continuar m-4" value="Continuar" required>

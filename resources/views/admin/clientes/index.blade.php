@@ -16,11 +16,9 @@
                         <table class="table table-hover mb-0">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th></th>
                                     <th>Nome</th>
-                                    <th>E-mail</th>
-                                    <th>Status</th>
-                                    <th>Criado em</th>
+                                    <th>E-mail</th>                                    
                                     <th></th>
                                 </tr>
                             </thead>
@@ -29,9 +27,7 @@
                                 <tr>
                                     <td>{{$cliente->id}}</td>
                                     <td class="text-bold-500">{{$cliente->name}}</td>
-                                    <td>{{$cliente->email}}</td>
-                                    <td class="text-bold-500"></td>
-                                    <td>{{$cliente->created_at}}</td>
+                                    <td>{{$cliente->email}}</td>                                    
                                     <td>
                                         <div class="d-flex">
                                             <a class="btn btn-sm btn-success me-1" href="{{route('admin.clientes.show', $cliente->id)}}"
@@ -49,9 +45,6 @@
                                             </form>
                                             @endif
                                         </div>
-
-
-
                                     </td>
                                 </tr>
                                 @empty

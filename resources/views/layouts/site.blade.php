@@ -25,7 +25,8 @@
                         @if (Route::has('login'))
                         @auth
                         <li class="nav-item">
-                            <a href="{{ url('/dashboard') }}" class="nav-link">Painel</a>
+                            <!--<a href="{{ url('/dashboard') }}" class="nav-link">Painel</a>-->
+                            <a class="nav-link nav-link-login" href="{{ route('login') }}">LOGIN</a>
                         </li>
                         @else
                         <li class="nav-item">
@@ -39,7 +40,9 @@
         </div>
     </div>
     <div class="site-content">
-        @yield('content')
+        <div class="perguntas">
+            @yield('content')
+        </div>
     </div>
 
     <footer class="bg-footer">

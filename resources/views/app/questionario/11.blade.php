@@ -10,7 +10,7 @@
                     @csrf
                     <input type="hidden" value="step12" name="nextStep">
                     <div class="form-group">
-                        <p class="py-4">Em caso de dor crônica (dor que se repete por meses ou anos), há quanto tempo sente?</p>
+                        <p class="px-4 pb-4">Em caso de dor crônica (dor que se repete por meses ou anos), há quanto tempo sente?</p>
                         <div class="border px-3 radius20 mb-2">
                             <div class="form-check">
                                 <input @if ($consulta->tempoDorCronica == '6-12') checked @endif 

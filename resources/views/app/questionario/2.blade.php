@@ -9,7 +9,7 @@
                 <form method="POST" action="{{route('site.consulta.store')}}">
                     @csrf
                     <div class="form-group">
-                        <p class="py-4">Antes de iniciarmos, como podemos te chamar?</p>
+                        <p class="px-4 pb-4">Antes de iniciarmos, como podemos te chamar?</p>
                         <input type="text" name="name" class="form-control" id="basicInput" placeholder="Digite seu nome" required>
                     </div>
                     <input type="submit" class="btn btn-sm btn-continuar m-4" value="Continuar">

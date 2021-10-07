@@ -98,7 +98,13 @@
             </tr>
             <tr>
                 <th scope="row">Composição do Blend de Chás</th>
-                <td></td>
+                <td>
+                @forelse($blends as $blend)
+                        {{$blend->cha->name}} <br>
+                    @empty
+                        Nenhum Blend selecionado.
+                    @endforelse  
+                </td>
             </tr>
         </tbody>
     </table>

@@ -10,7 +10,7 @@
                     @csrf
                     <input type="hidden" value="step7" name="nextStep">
                       <div class="form-group">
-                        <p class="py-4">Qual é sua altura?</p>
+                        <p class="px-4 pb-4">Qual é sua altura?</p>
                         <input type="text" class="form-control input-largura-menor" id="basicInput" placeholder="Digite sua altura" name="altura" value="{{$consulta->altura}}">
                     </div>
                     <input type="submit" class="btn btn-sm btn-continuar m-4" value="Continuar" required>

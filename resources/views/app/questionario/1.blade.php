@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="min-vh-90">
+        <div class="min-vh-95">
             <div class="col-md-6 offset-md-3">
                 @isset($consulta)
                 <div class="card-perguntas p-5 shadow-lg text-center">
@@ -16,7 +16,6 @@
                     <a href="{{route('site.step2')}}" class="btn btn-sm btn-continuar mb-4">Iniciar nova Consulta</a>
                 </div>
                 @endisset
-
                 <?php
                 if (!isset($consulta)) { ?>
                     <div class="card-perguntas p-5 shadow-lg text-center">

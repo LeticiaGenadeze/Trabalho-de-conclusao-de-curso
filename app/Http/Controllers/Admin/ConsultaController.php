@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blend;
 use App\Models\Consulta;
 use App\Models\ConsultaSintoma;
 use Illuminate\Http\Request;
@@ -116,10 +117,7 @@ class ConsultaController extends Controller
         if($imc > '30'){
             $imc = $imc." Obesidade";
         }
-  
-      
-
-    
+          
         if($consulta->sexo == 'feminino'){
             $consulta->sexo = 'Feminino';
         }
@@ -226,7 +224,9 @@ class ConsultaController extends Controller
             $consulta->fatoresDoCha = 'Não';
         }
 
-        return view('admin.consultas.show', compact('consulta', 'idade', 'imc', 'sintomas'));
+        $blends = Blend::query()->where('consulta_id', $consulta->id)->get();
+        
+        return view('admin.consultas.show', compact('consulta', 'idade', 'imc', 'sintomas', 'blends'));
     }
 
     /**

@@ -10,7 +10,7 @@
                     @csrf
                     <input type="hidden" value="step16" name="nextStep">
                     <div class="form-group">
-                        <p class="py-4">Como está o seu consumo de água diário?</p>
+                        <p class="px-4 pb-4">Como está o seu consumo de água diário?</p>
                         <div class="border px-3 radius20 mb-2">
                             <div class="form-check">
                                 <input @if ($consulta->consumoDeAgua == 'ruim') checked @endif 

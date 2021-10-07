@@ -45,33 +45,12 @@ class ConsultasController extends Controller
         $consulta = new Consulta();
         $consulta['nome'] = $request['name'];
         if ($consulta->save()) {
-            setcookie("consulta", $consulta->id, (time() + 24 * 3600));
-
+            $time =  time() + 24 * 3600;            
+            setcookie("consulta", $consulta->id, $time, "/");
             return redirect()->route('site.step3', $consulta);
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -85,9 +64,7 @@ class ConsultasController extends Controller
 
         $consulta = Consulta::find($id);
         $data = $request->all();
-
-        //dd($data);
-
+        
         $next = 'site.' . $data['nextStep'];
         if ($consulta->update($data)) {
             return redirect()->route($next, $consulta);
@@ -96,7 +73,6 @@ class ConsultasController extends Controller
 
     public function updateSexo(Request $request, $id)
     {
-
         $consulta = Consulta::find($id);
         $data = $request->all();
 
@@ -113,26 +89,14 @@ class ConsultasController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
+    //Relaciona os sintomas marcados pelo cliente com a consulta
     public function addSintoma(Request $request, $idConsulta)
     {
         $sintomas  = $request['sintoma'];
 
         $SistomasCadastrados = ConsultaSintoma::query()->where('consulta_id', $idConsulta)->pluck('sintoma_id')->toArray();
-        // dd($SistomasCadastrados);
-        //  dd($sintomas);
+
         if ($sintomas) {
-            //   $qtd = count($sintomas);
 
             foreach ($sintomas as $sintoma) {
                 if (!in_array($sintoma, $SistomasCadastrados)) {
@@ -142,15 +106,6 @@ class ConsultasController extends Controller
                     $sintomaConsulta->save();
                 }
             }
-
-            //     for ($i = 0; $i < $qtd; $i++) {
-            //         $idSintoma = $sintomas[$i];
-            //         $sintomaConsulta = new ConsultaSintoma();
-            //         $sintomaConsulta['consulta_id'] = $idConsulta;
-            //        $sintomaConsulta['sintoma_id'] = $idSintoma;
-
-            //        $sintomaConsulta->save();
-            //    }
 
             return redirect()->route('site.step10', $idConsulta);
         }
@@ -297,14 +252,11 @@ class ConsultasController extends Controller
         $sintomaDaConsulta = [];
 
         if ($consulta->sintomas) {
-
+            //se tiver sintomas, vinculados a consulta, add os sintomas no array de tags
             foreach ($consulta->sintomas as $sintoma) {
                 array_push($tags, $sintoma->sintoma->description);
                 array_push($sintomaDaConsulta, $sintoma->sintoma->description);
 
-                /* if($sintoma->sintoma->description == 'ansiedade'){
-                    array_push( $tags, 'ansiedade'); 
-                };*/
             }
         }
 
@@ -347,22 +299,28 @@ class ConsultasController extends Controller
             array_push($tags, 'naopratico');
         }
 
+        //Seleciona as caracteristica dos chas que são beneficios, de acordo com as tags
         $caracteristicasBoas =  Caracteristica::query()->whereIn('description', $tags)->where('type', 'beneficio')->pluck('description', 'id')->toArray();
-
+        
+        //Seleciona as caracteristica dos chas que são maleficios
         $caracteristicasRuins =  Caracteristica::query()->whereIn('description', $tags)->where('type', 'maleficio')->pluck('description', 'id')->toArray();
 
+        //Verifica quais chas estão vinculados aquelas caracteristicas
         $caracteristicasBoasCha = ChaCaracteristica::query()->whereIn('caracteristica_id', array_keys($caracteristicasBoas))->distinct('cha_id')->pluck('cha_id', 'cha_id')->toArray();
-
         $caracteristicasRuinsCha = ChaCaracteristica::query()->whereIn('caracteristica_id', array_keys($caracteristicasRuins))->distinct('cha_id')->pluck('cha_id', 'cha_id')->toArray();
 
+        //Faz a consulta na tabela de chás de acordo com o id dos chás que foram selecionados
         $chas = Cha::query()->whereIn('id', $caracteristicasBoasCha)->whereNotIn('id', $caracteristicasRuinsCha)->paginate('6');
 
+        //caso a consulta trazer mais que 6 chas, o sistema personaliza automaticamente o blend
         $chas =  $chas->sortBy(function ($item) {
             return rand();
         });
 
+        //atualiza a consulta dizendo que ela foi concluida
         $consulta->update(array('status' => 1));
 
+        //se  for uma atualização da consulta, deleta o blend anterior
         $blends = Blend::query()->where('consulta_id', $consulta->id)->get();
         if ($blends) {
             foreach ($blends as $blend) {
@@ -370,23 +328,23 @@ class ConsultasController extends Controller
             }
         }
 
+        //grava no banco um novo blend vinculado a consulta
         foreach ($chas as $cha) {
             $blend =  new Blend();
             $blend['consulta_id'] = $consulta->id;
             $blend['cha_id'] = $cha->id;
-
             $blend->save();
         }
 
+        //retorna a view mostrando o loading na tela e recireciona para a tela do blend
         return redirect()->route('site.blend', $consulta->id);
-
-        //return view('app.questionario.20', compact('consulta', 'blendPersonalizado'));
     }
 
+    //retorna a tela do blend
     public function blend($id)
     {
         $blendPersonalizado = Blend::query()->where('consulta_id', $id)->get();
         $consulta = Consulta::find($id);
-        return view('app.questionario.blend', compact('consulta','blendPersonalizado'));
+        return view('app.questionario.blend', compact('consulta', 'blendPersonalizado'));
     }
 }

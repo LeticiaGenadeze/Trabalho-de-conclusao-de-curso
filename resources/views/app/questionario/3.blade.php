@@ -8,7 +8,7 @@
             <div class="card-perguntas p-5 shadow-lg text-center">
                 <form method="GET" action="{{route('site.step4', $consulta->id)}}">
                     <div class="form-group">
-                    <h2 class="text-grey mt-2">Prazer {{ $consulta->nome }}!</h2>
+                    <h2 class="text-grey">Prazer {{ $consulta->nome }}!</h2>
                         <p class="pt-4 fw-normal px-5">Para nos conhecermos melhor, faremos algumas perguntas sobre você e seu estilo de vida. Assim, conseguiremos oferecer a melhor combinação para seu blend de chás!</p>
                         <p class="fw-normal">Isso vai levar menos de 5 minutos.</p> 
                     </div>

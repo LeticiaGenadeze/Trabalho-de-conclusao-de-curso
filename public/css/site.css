@@ -38,10 +38,17 @@
     color: #bbc0bb;
 }
 
+.perguntas{
+    min-height: 605px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .card-perguntas {
     border-radius: 20px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .progress, .progress-bar{
@@ -86,6 +93,9 @@
 
 .js-cookie-consent{
     background-color: #f0ee7c;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .js-cookie-consent p{
