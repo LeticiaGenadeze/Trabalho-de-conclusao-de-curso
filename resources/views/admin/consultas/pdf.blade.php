@@ -1,24 +1,13 @@
-
 <div class="page-heading">
-    <h3>Consulta - {{$consulta->id}}</h3>
+    <h2>Consulta Número - {{$consulta->id}}</h2>
 </div>
 
 <div>
     <table class="table">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
                 <th scope="row">Nome</th>
                 <td>{{$consulta->nome}}</td>
-            </tr>
-            <tr>
-                <th scope="row">Email</th>
-                <td>{{$consulta->email}}</td>
             </tr>
             <tr>
                 <th scope="row">Data de Nascimento</th>
@@ -88,17 +77,47 @@
                 <th scope="row">Sintomas</th>
                 <td>
                     @forelse($sintomas as $sintoma)
-                        {{$sintoma->sintoma->name}} <br>
+                    {{$sintoma->sintoma->name}} <br>
                     @empty
-                        Nenhum sintoma selecionado.
-                    @endforelse                    
+                    Nenhum sintoma selecionado.
+                    @endforelse
                 </td>
             </tr>
             <tr>
                 <th scope="row">Composição do Blend de Chás</th>
-                <td></td>
+                <td> @forelse($blends as $blend)
+                    {{$blend->cha->name}} <br>
+                    @empty
+                    Nenhum Blend selecionado.
+                    @endforelse
+                </td>
             </tr>
         </tbody>
     </table>
 </div>
 
+<style>
+    .page-heading{
+        color: #333;
+    }
+
+    .page-heading h2{
+        text-align: center;
+    }  
+
+    .table {
+        width: 100%;
+        color: #333;
+    
+    }
+
+    .table th {
+        text-align: left;
+    }
+
+    th,
+    td {
+        border: 1px solid #ccc;
+        padding: 10px 20px;
+    }
+</style>

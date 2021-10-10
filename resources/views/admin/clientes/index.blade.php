@@ -29,7 +29,7 @@
                                     <td class="text-bold-500">{{$cliente->name}}</td>
                                     <td>{{$cliente->email}}</td>                                    
                                     <td>
-                                        <div class="d-flex">
+                                        <div class="d-flex justify-content-end">
                                             <a class="btn btn-sm btn-success me-1" href="{{route('admin.clientes.show', $cliente->id)}}"
                                                 ><i class="bi bi-eye"></i>
                                             </a>

@@ -34,7 +34,7 @@
                                     <td class="text-bold-500">{{$sintoma->name}}</td>
                                     <td>{{$sintoma->description}}</td>
                                     <td>
-                                        <div class="d-flex">
+                                        <div class="d-flex justify-content-end">
                                             <a class="btn btn-sm btn-info me-1" href="{{route('admin.sintomas.edit', $sintoma->id)}}">
                                                 <i class="bi bi-pencil"></i>
                                             </a>

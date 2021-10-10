@@ -37,6 +37,13 @@
                                         <input type="text" id="first-name" class="form-control" name="name" placeholder="Nome" value="{{old('name',  $cha->name)}}">
                                     </div>
                                     <div class="col-md-4">
+                                        <label>Nome Científico</label>
+                                    </div>
+                                    <div class="col-md-8 form-group">
+                                        <input type="text" id="first-name" class="form-control" name="nomeCientifico" placeholder="Nome Científico" value="{{old('nomeCientifico',  $cha->nomeCientifico)}}">
+                                    </div>
+                                    
+                                    <div class="col-md-4">
                                         <label>Descrição</label>
                                     </div>
                                     <div class="col-md-8 form-group">

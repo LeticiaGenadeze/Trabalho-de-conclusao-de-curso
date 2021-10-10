@@ -12,6 +12,7 @@ class Cha extends Model
 
     protected $fillable = [
         'name',
+        'nomeCientifico',
         'description',
         'cover',
     ];

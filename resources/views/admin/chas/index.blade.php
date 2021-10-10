@@ -23,7 +23,6 @@
                                 <tr>
                                     <th>Imagem</th>
                                     <th>Nome</th>
-                                    <th>Descrição</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -32,9 +31,8 @@
                                 <tr>
                                     <td> <img src="{{asset('storage')}}/chas/{{$cha->cover}}" width="80"></td>
                                     <td class="text-bold-500">{{$cha->name}}</td>
-                                    <td>{{$cha->description}}</td>
                                     <td>
-                                        <div class="d-flex">
+                                        <div class="d-flex justify-content-end">
                                             <a class="btn btn-sm btn-primary me-1" href="{{route('admin.chas.caracteristica', $cha->id)}}">
                                                 <i class="bi bi-list-check"></i>
                                             </a>

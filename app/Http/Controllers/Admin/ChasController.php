@@ -45,6 +45,7 @@ class ChasController extends Controller
 
         $validator = Validator::make($data, [
             'name' =>  'required',
+            'nomeCientifico' => 'required',
             'description' => 'required',
             'cover' => 'required|image|mimes:jpg,png,jpeg|max:2048|dimensions:min_width=100,min_height=100',
         ]);
@@ -111,6 +112,7 @@ class ChasController extends Controller
         $data = $request->all();
         $validator = Validator::make($data, [
             'name' =>  'required',
+            'nomeCientifico' =>  'required',
             'description' => 'required',
             'cover' => 'image|mimes:jpg,png,jpeg|max:2048|dimensions:min_width=100,min_height=100',
 

@@ -45,7 +45,7 @@ class ConsultasController extends Controller
         $consulta = new Consulta();
         $consulta['nome'] = $request['name'];
         if ($consulta->save()) {
-            $time =  time() + 24 * 3600;            
+            $time =  time() + 24 * 3600;
             setcookie("consulta", $consulta->id, $time, "/");
             return redirect()->route('site.step3', $consulta);
         }
@@ -64,7 +64,7 @@ class ConsultasController extends Controller
 
         $consulta = Consulta::find($id);
         $data = $request->all();
-        
+
         $next = 'site.' . $data['nextStep'];
         if ($consulta->update($data)) {
             return redirect()->route($next, $consulta);
@@ -256,7 +256,6 @@ class ConsultasController extends Controller
             foreach ($consulta->sintomas as $sintoma) {
                 array_push($tags, $sintoma->sintoma->description);
                 array_push($sintomaDaConsulta, $sintoma->sintoma->description);
-
             }
         }
 
@@ -301,7 +300,7 @@ class ConsultasController extends Controller
 
         //Seleciona as caracteristica dos chas que são beneficios, de acordo com as tags
         $caracteristicasBoas =  Caracteristica::query()->whereIn('description', $tags)->where('type', 'beneficio')->pluck('description', 'id')->toArray();
-        
+
         //Seleciona as caracteristica dos chas que são maleficios
         $caracteristicasRuins =  Caracteristica::query()->whereIn('description', $tags)->where('type', 'maleficio')->pluck('description', 'id')->toArray();
 
@@ -345,6 +344,19 @@ class ConsultasController extends Controller
     {
         $blendPersonalizado = Blend::query()->where('consulta_id', $id)->get();
         $consulta = Consulta::find($id);
+
+        $chasId = [];
+        foreach ($blendPersonalizado as $cha) {
+            array_push($chasId, $cha->cha_id);
+        }
+
+        $caracteristicasChas = ChaCaracteristica::query()->whereIn('cha_id', array_values($chasId))->get();
+
+        $caracteristicasId = [];
+        foreach ($caracteristicasChas as $caracteristica) {
+            array_push($caracteristicasId, $caracteristica->id);
+        }
+        
         return view('app.questionario.blend', compact('consulta', 'blendPersonalizado'));
     }
 }

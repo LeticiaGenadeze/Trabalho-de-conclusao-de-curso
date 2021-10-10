@@ -10,25 +10,27 @@
 </div>
 
 <div class="sidebar-menu">
-    <ul class="menu">
-        <li class="sidebar-item active ">
+    <ul class="menu d-blok">
+        <li class="sidebar-item @if(Route::is('admin.dashboard')) active @endif">
             <a href="{{route('admin.dashboard')}}" class='sidebar-link'>
                 <i class="bi bi-grid-fill"></i>
                 <span>Dashboard</span>
             </a>
         </li>
-        <li class="sidebar-item ">
+        <li class="sidebar-item @if(Route::is('admin.clientes')) active @endif">
             <a href="{{route('admin.clientes')}}" class='sidebar-link'>
                 <i class="bi bi-people"></i>
                 <span>Clientes</span>
             </a>
         </li>
-        <li class="sidebar-item  has-sub">
+        <li class="sidebar-item  has-sub @if(Route::is('admin.consultas')) active @endif
+            @if(Route::is('admin.consultas.pendentes')) active @endif">
             <a href="#" class='sidebar-link'>
                 <i class="bi bi-card-checklist"></i>
                 <span>Consultas</span>
             </a>
-            <ul class="submenu ">
+            <ul class="submenu @if(Route::is('admin.consultas')) display @endif
+            @if(Route::is('admin.consultas.pendentes')) display @endif">
                 <li class="submenu-item ">
                     <a href="{{route('admin.consultas')}}">Efetivadas</a>
                 </li>
@@ -37,12 +39,14 @@
                 </li>
             </ul>
         </li>
-        <li class="sidebar-item  has-sub">
+        <li class="sidebar-item  has-sub @if(Route::is('admin.sintomas')) active @endif
+            @if(Route::is('admin.sintomas.create')) active @endif">
             <a href="#" class='sidebar-link'>
                 <i class="bi bi-dash-square"></i>
                 <span>Sintomas</span>
             </a>
-            <ul class="submenu ">
+            <ul class="submenu @if(Route::is('admin.sintomas')) display @endif
+            @if(Route::is('admin.sintomas.create')) display @endif">
                 <li class="submenu-item ">
                     <a href="{{route('admin.sintomas')}}">Listar Todos</a>
                 </li>
@@ -51,12 +55,16 @@
                 </li>
             </ul>
         </li>
-        <li class="sidebar-item  has-sub">
+        <li class="sidebar-item  has-sub @if(Route::is('admin.chas')) active @endif
+        @if(Route::is('admin.chas.create')) active @endif
+        @if(Route::is('admin.caracteristicas')) active @endif">
             <a href="#" class='sidebar-link'>
                 <i class="bi bi-cup"></i>
                 <span>Chás</span>
             </a>
-            <ul class="submenu ">
+            <ul class="submenu @if(Route::is('admin.chas')) display @endif
+            @if(Route::is('admin.chas.create')) display @endif
+            @if(Route::is('admin.caracteristicas')) display @endif">
                 <li class="submenu-item ">
                     <a href="{{route('admin.chas')}}">Listar Todos</a>
                 </li>
@@ -69,29 +77,11 @@
             </ul>
         </li>
 
-
-
-
-
-        <!--
-        <li class="sidebar-item  has-sub">
-            <a href="#" class='sidebar-link'>
-                <i class="bi bi-stack"></i>
-                <span>Item Principal</span>
-            </a>
-            <ul class="submenu ">
-                <li class="submenu-item ">
-                    <a href="">Subitem</a>
-                </li> 
-            </ul>
-        </li>    
-        <li class="sidebar-item ">
-            <a href="" class='sidebar-link'>
-                <i class="bi bi-grid-fill"></i>
-                <span>Item sem Submenu</span>
-            </a>
-        </li>
-    -->
+    <style>
+        .display{
+            display: block !important;
+        }
+    </style>
 
     </ul>
 </div>

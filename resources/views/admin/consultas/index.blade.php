@@ -16,9 +16,9 @@
                         <table class="table table-hover mb-0">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th>Número</th>
                                     <th>Nome</th>
-                                    <th>E-mail</th>
+                                    <th>Data da Consulta</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -27,10 +27,9 @@
                                 <tr>
                                     <td>{{$consulta->id}}</td>
                                     <td class="text-bold-500">{{$consulta->nome}}</td>
-                                    <td>{{$consulta->email}}</td>
-                                    <td class="text-bold-500"></td>
+                                    <td class="text-bold-500">{{ \Carbon\Carbon::parse($consulta->created_at)->format('d/m/Y')}}</td>
                                     <td>
-                                        <div class="d-flex">
+                                        <div class="d-flex justify-content-end">
                                             <a class="btn btn-sm btn-success me-1" href="{{route('admin.consultas.show', $consulta->id)}}">
                                                 <i class="bi bi-eye"></i>
                                             </a>                                          

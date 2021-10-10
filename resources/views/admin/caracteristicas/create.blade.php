@@ -39,12 +39,6 @@
                                         <input type="text" id="first-name" class="form-control" name="description" placeholder="Descrição" value="{{old('description')}}">
                                     </div>
                                     <div class="col-md-4">
-                                        <label>Nota</label>
-                                    </div>
-                                    <div class="col-md-8 form-group">
-                                        <input type="text" id="first-name" class="form-control" name="note" placeholder="Nota" value="{{old('note')}}">
-                                    </div>
-                                    <div class="col-md-4">
                                         <label>Selecione o Tipo</label>
                                     </div>
                                     <div class="col-md-8 form-group">

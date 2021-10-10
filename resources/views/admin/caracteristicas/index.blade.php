@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="page-heading">
+<div class="page-heading d-flex justify-content-between">
     <h3>Lista de Características</h3>
-    <a  href="{{route('admin.caracteristicas.create')}}">Cadastrar Característica</a>
+    <a class="btn btn-primary" href="{{route('admin.caracteristicas.create')}}">Cadastrar Característica</a>
 </div>
 
 
@@ -38,10 +38,7 @@
                                     <td class="text-bold-500">{{$caracteristica->description}}</td>
                                     <td class="text-bold-500">{{$caracteristica->type}}</td>
                                     <td>
-                                        <div class="d-flex">
-                                            <a class="btn btn-sm btn-success me-1" href="{{route('admin.caracteristicas.show', $caracteristica->id)}}">
-                                                <i class="bi bi-eye"></i>
-                                            </a>
+                                        <div class="d-flex justify-content-end">
                                             <a class="btn btn-sm btn-info me-1" href="{{route('admin.caracteristicas.edit', $caracteristica->id)}}">
                                                 <i class="bi bi-pencil"></i>
                                             </a>

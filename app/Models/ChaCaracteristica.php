@@ -19,5 +19,6 @@ class ChaCaracteristica extends Model
     public function caracteristica(){
         return $this->belongsTo(Caracteristica::class, 'caracteristica_id');
     }
-   
+
+    
 }

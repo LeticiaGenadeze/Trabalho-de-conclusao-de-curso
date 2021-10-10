@@ -19,10 +19,6 @@
                 <td>{{$consulta->nome}}</td>
             </tr>
             <tr>
-                <th scope="row">Email</th>
-                <td>{{$consulta->email}}</td>
-            </tr>
-            <tr>
                 <th scope="row">Data de Nascimento</th>
                 <td>{{ \Carbon\Carbon::parse($consulta->dataDeNascimento)->format('d/m/Y')}}</td>
             </tr>

@@ -30,7 +30,8 @@
                 <button class="text-white px-2 mb-1 btn btn-sm
                 @if($caracteristica->type == 'beneficio') btn-success @endif
                 @if($caracteristica->type == 'maleficio') btn-danger @endif
-                ">{{$caracteristica->type}}</button>
+                ">@if($caracteristica->type == 'beneficio') {{'Benefício'}} @endif
+                @if($caracteristica->type == 'maleficio') {{'Malefício'}} @endif</button>
                 Nome: {{$caracteristica->name}}
                 <form class="form form-horizontal me-1" action="{{route('admin.chas.addCaracteristica', $cha->id)}}" method="POST">
                     @csrf
@@ -53,7 +54,8 @@
                 <button class="text-white px-2 mb-1 btn btn-sm
                 @if($chaCaracteristica->caracteristica->type == 'beneficio') btn-success @endif
                 @if($chaCaracteristica->caracteristica->type == 'maleficio') btn-danger @endif
-                ">{{$chaCaracteristica->caracteristica->type}}</button>
+                ">@if($chaCaracteristica->caracteristica->type == 'beneficio') {{'Benefício'}} @endif
+                @if($chaCaracteristica->caracteristica->type == 'maleficio') {{'Malefício'}} @endif</button>
                 Nome: {{$chaCaracteristica->caracteristica->name}}
                 <form class="form form-horizontal me-1" action="{{route('admin.chas.deletarCaracteristica', $chaCaracteristica->id)}}" method="POST">
                     @csrf
