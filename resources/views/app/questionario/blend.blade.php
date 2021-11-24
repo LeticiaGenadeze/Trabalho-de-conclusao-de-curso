@@ -37,7 +37,10 @@
                     @endforelse
                 </div>
                 <div class="row mb-4 d-flex align-items-center justify-content-center">
-                    <a class="btn btn-lg btn-continuar m-3" target="_blank" style="width: 200px;" href="https://api.whatsapp.com/send?phone=5549991494572&text=Ol%C3%A1!%0AMeu%20nome%20%C3%A9%20{{ $consulta->nome }}.%0AGostaria%20de%20fazer%20o%20pedido%20do%20blend%20de%20ch%C3%A1s%20com%20o%20c%C3%B3digo%20{{ $consulta->id }}.%0AObrigado!">
+                    <a class="btn btn-lg btn-continuar m-3" target="_blank" style="width: 200px;" 
+                    href="https://api.whatsapp.com/send?phone=5549991494572&text=Ol%C3%A1!%0AMeu%20nome%20%C3%A9%20{{ $consulta->nome }}
+                    .%0AGostaria%20de%20fazer%20o%20pedido%20do%20blend%20de%20ch%C3%A1s%20com%20o%20c%C3%B3digo%20{{ $consulta->id }}.
+                    %0AObrigado!">
                         Faça seu pedido!
                     </a>
                 </div>

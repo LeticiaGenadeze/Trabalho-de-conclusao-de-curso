@@ -33,7 +33,8 @@
                     <input type="submit" class="btn btn-sm btn-continuar m-4" value="Continuar">
                 </form>
                 <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" 
+                    aria-valuemax="100"></div>
                 </div>
             </div>
         </div>
