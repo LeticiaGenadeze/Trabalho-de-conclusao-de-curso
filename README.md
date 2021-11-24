@@ -2,13 +2,17 @@
 
 ## Trabalho de Conclusão de Curso
 
-<p>Este trabalho foi desenvolvido para a conclusão do curso de Sistemas de Informação</p>
+<p>Este trabalho foi desenvolvido para a conclusão do curso de Sistemas de Informação.</p>
 
 <p>Seu objetivo é realizar a personalização de um blend de chás de acordo com as respostas obtidas pelo usuário e para isso foi 
 utilizado para o desenvolvimento o Framework Laravel.</p>
 
 <p>O sistema possui o painel do administrador que realiza o gerenciamento dos dados necessários para a realização da personalização
 do blend de chás.</p>
+
+<p>O sistema possui um questionário que é exibido para o usuário como uma sequêcia de passos, onde o mesmo responde as perguntas
+de acordo com sua realidade e objetivos e ao final é  exibido um blend de chás personalizado, podendo o mesmo realizar o pedido
+através do link do whatsapp (provisionamente até o desenvolvimento da Plataforma de E-Commerce).</p>
 
 ## Sobre o Laravel
 
