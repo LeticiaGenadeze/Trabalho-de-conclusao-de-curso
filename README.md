@@ -1,4 +1,4 @@
- <p align="center"><a href="https://omeucha.com/" target="_blank"><img src="{{ asset('themes/admin/images/logo/logo.png') }}" width="400"></a></p>
+ <p align="center"><a href="https://omeucha.com/" target="_blank"><img src="https://omeucha.com/wp-content/themes/omeuchaoficial/assets/img/logo.png" width="400"></a></p>
 
 ## Trabalho de Conclusão de Curso
 
@@ -24,4 +24,4 @@ O Laravel utiliza o padrão MVC (Model, View e Controller) que, basicamente, fun
 
 O Laravel é acessível, poderoso e fornece ferramentas necessárias para aplicações grandes e robustas.
 
-- [documentation](https://laravel.com/docs) 
+- [Documentação](https://laravel.com/docs) 
