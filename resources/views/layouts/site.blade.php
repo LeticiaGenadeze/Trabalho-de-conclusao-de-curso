@@ -15,12 +15,12 @@
     <div class="container-fluid site-topo">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <a href="">
+                <div class="col-md-6 col-8">
+                    <a href="https://app.omeucha.com/">
                         <img class="logo-site" src="{{ asset('themes/admin/images/logo/logo.png') }}" alt="Logo" srcset="">
                     </a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-4">
                     <ul class="nav justify-content-end py-3">
                         @if (Route::has('login'))
                         @auth
@@ -51,6 +51,7 @@
         </div>
     </footer>
     @include('cookie-consent::index')
+    @yield('scripts')
 
 </body>
 

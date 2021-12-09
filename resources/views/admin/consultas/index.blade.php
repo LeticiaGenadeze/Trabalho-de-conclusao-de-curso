@@ -39,7 +39,7 @@
                                                     <i class="bi bi-trash"></i>
                                                 </button>
                                             </form>
-                                            <a class="btn btn-sm btn-info" href="{{route('admin.consultas.pdf', $consulta->id)}}">
+                                            <a class="btn btn-sm btn-info" target="blank" href="{{route('admin.consultas.pdf', $consulta->id)}}">
                                                 <i class="bi bi-file-earmark-arrow-down-fill"></i>
                                             </a>                                            
                                         </div>

@@ -6,12 +6,12 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="card-perguntas p-5 shadow-lg text-center">
-            <form method="POST" action="{{route('site.consulta.update', $consulta->id)}}">
+                <form method="POST" action="{{route('site.consulta.update', $consulta->id)}}">
                     @csrf
                     <input type="hidden" value="step7" name="nextStep">
-                      <div class="form-group">
+                    <div class="form-group">
                         <p class="px-4 pb-4">Qual é sua altura?</p>
-                        <input type="text" class="form-control input-largura-menor" id="basicInput" placeholder="Digite sua altura" name="altura" value="{{$consulta->altura}}">
+                        <input type="text" data-js="altura" class="form-control input-largura-menor" id="altura" placeholder="Digite sua altura" name="altura" value="{{$consulta->altura}}">
                     </div>
                     <input type="submit" class="btn btn-sm btn-continuar m-4" value="Continuar" required>
                 </form>
@@ -23,4 +23,26 @@
     </div>
 </div>
 
+@endsection
+
+@section('scripts')
+
+<script>
+    
+const masks={
+    altura (value){
+        return value
+        .replace(/\D/g, '')
+        .replace(/(\d{1})(\d)/, '$1.$2')
+    }
+}
+
+document.querySelectorAll('input').forEach(($input) => {
+    const field = $input.dataset.js
+    $input.addEventListener('input', (e)=>{
+        e.target.value = masks[field](e.target.value)
+    }, false)
+})
+
+</script>
 @endsection

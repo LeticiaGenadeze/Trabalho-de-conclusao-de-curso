@@ -11,7 +11,7 @@
                     <h2 class="text-grey mt-4">Que bom que você voltou, {{$consulta->nome}}!!</h2>
                     <p class="py-4 fw-normal">Vamos continuar a personalização do seu blend de chás?</p>
                     <form method="GET" action="{{route('site.step4', $consulta->id)}}">
-                        <input type="submit" class="btn btn-sm btn-continuar m-4" value="Continuar de onde parei">
+                        <input type="submit" class="btn btn-sm btn-continuar m-4" value="Continuar com a consulta anterior">
                     </form>
                     <a href="{{route('site.step2')}}" class="btn btn-sm btn-continuar mb-4">Iniciar nova Consulta</a>
                 </div>

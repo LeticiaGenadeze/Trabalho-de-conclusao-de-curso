@@ -17,20 +17,26 @@
                 <span>Dashboard</span>
             </a>
         </li>
-        <li class="sidebar-item @if(Route::is('admin.clientes')) active @endif">
+        <li class="sidebar-item @if(Route::is('admin.clientes')) active @endif
+        @if(Route::is('admin.clientes.edit')) active @endif
+        @if(Route::is('admin.clientes.show')) active @endif">
             <a href="{{route('admin.clientes')}}" class='sidebar-link'>
                 <i class="bi bi-people"></i>
                 <span>Clientes</span>
             </a>
         </li>
-        <li class="sidebar-item  has-sub @if(Route::is('admin.consultas')) active @endif
-            @if(Route::is('admin.consultas.pendentes')) active @endif">
+        <li class="sidebar-item  has-sub 
+            @if(Route::is('admin.consultas')) active @endif
+            @if(Route::is('admin.consultas.pendentes')) active @endif
+            @if(Route::is('admin.consultas.show')) active @endif
+            ">
             <a href="#" class='sidebar-link'>
                 <i class="bi bi-card-checklist"></i>
                 <span>Consultas</span>
             </a>
             <ul class="submenu @if(Route::is('admin.consultas')) display @endif
-            @if(Route::is('admin.consultas.pendentes')) display @endif">
+            @if(Route::is('admin.consultas.pendentes')) display @endif
+            @if(Route::is('admin.consultas.show')) active @endif">
                 <li class="submenu-item ">
                     <a href="{{route('admin.consultas')}}">Efetivadas</a>
                 </li>
@@ -40,13 +46,16 @@
             </ul>
         </li>
         <li class="sidebar-item  has-sub @if(Route::is('admin.sintomas')) active @endif
-            @if(Route::is('admin.sintomas.create')) active @endif">
+            @if(Route::is('admin.sintomas.create')) active @endif
+            @if(Route::is('admin.sintomas.edit')) active @endif ">
             <a href="#" class='sidebar-link'>
                 <i class="bi bi-dash-square"></i>
                 <span>Sintomas</span>
             </a>
             <ul class="submenu @if(Route::is('admin.sintomas')) display @endif
-            @if(Route::is('admin.sintomas.create')) display @endif">
+            @if(Route::is('admin.sintomas.create')) display @endif
+            @if(Route::is('admin.sintomas.edit')) display @endif 
+            ">
                 <li class="submenu-item ">
                     <a href="{{route('admin.sintomas')}}">Listar Todos</a>
                 </li>
@@ -55,16 +64,29 @@
                 </li>
             </ul>
         </li>
-        <li class="sidebar-item  has-sub @if(Route::is('admin.chas')) active @endif
+        <li class="sidebar-item  has-sub 
+        @if(Route::is('admin.chas')) active @endif
         @if(Route::is('admin.chas.create')) active @endif
-        @if(Route::is('admin.caracteristicas')) active @endif">
+        @if(Route::is('admin.caracteristicas')) active @endif
+        @if(Route::is('admin.chas.edit')) active @endif
+        @if(Route::is('admin.chas.caracteristica')) active @endif
+        @if(Route::is('admin.chas.show'))  active @endif
+        @if(Route::is('admin.chas.edit'))  active @endif
+        @if(Route::is('admin.caracteristicas.edit')) active @endif
+        ">
             <a href="#" class='sidebar-link'>
                 <i class="bi bi-cup"></i>
                 <span>Chás</span>
             </a>
             <ul class="submenu @if(Route::is('admin.chas')) display @endif
             @if(Route::is('admin.chas.create')) display @endif
-            @if(Route::is('admin.caracteristicas')) display @endif">
+            @if(Route::is('admin.caracteristicas')) display @endif
+            @if(Route::is('admin.chas.caracteristica')) display @endif
+            @if(Route::is('admin.chas.show')) display @endif
+            @if(Route::is('admin.chas.edit')) display @endif
+            @if(Route::is('admin.caracteristicas.edit')) display @endif
+           
+            ">
                 <li class="submenu-item ">
                     <a href="{{route('admin.chas')}}">Listar Todos</a>
                 </li>
@@ -77,11 +99,11 @@
             </ul>
         </li>
 
-    <style>
-        .display{
-            display: block !important;
-        }
-    </style>
+        <style>
+            .display {
+                display: block !important;
+            }
+        </style>
 
     </ul>
 </div>
